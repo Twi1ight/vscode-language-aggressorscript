@@ -163,12 +163,20 @@
 		"operators": {
 			"patterns": [
 				{
-					"match": "\\s(eq|ne|lt|gt|isin|iswm|-isarray|isfunction|\\-ishash|\\-isletter|\\-isnumber|\\-isupper|\\-islower|\\-istrue|hasmatch)\\s",
+					"match": "(?:\\s|\\()!?(in|eq|ne|lt|gt|is|isa|isin|iswm|hasmatch|ismatch)\\s",
 					"name": "keyword.operator.cna"
 				},
 				{
-					"match": "\\b(x|cmp|\\+|-|%|#|\\*|\\/|\\^|==?|&&|=~|<=?|>=?|(?<!\\.)\\.{2}(?!\\.))\\b",
+					"match": "(?:\\s|\\()(x|cmp|\\+|-|%|\\*|\\*\\*|\\/|\\^|==?|&&|\\|\\||!=|=~|<=?|>=?|<=|<=>|(?<!\\.)\\.{2}(?!\\.))\\s",
 					"name": "keyword.operator.cna"
+				},
+				{
+					"match": "!?-(isarray|isfunction|ishash|isletter|isnumber|isupper|islower|istrue|eof|canread|canwrite|exists|isDir|isFile|isHidden)\\s",
+					"name": "keyword.operator.sleep.cna"
+				},
+				{
+					"match": "-(hasbootstraphint|is64|isactive|isadmin|isbeacon|isssh)\\s",
+					"name": "keyword.operator.aggressor.cna"
 				}
 			]
 		},
